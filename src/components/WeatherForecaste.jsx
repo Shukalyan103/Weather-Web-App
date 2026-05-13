@@ -6,14 +6,13 @@ import Maplocated from './Maplocated'
 import { AppContext } from "@/context/AppContext";
 
 const WeatherForecaste = () => {
-    const { citiesData, coordinates, weatherapiKey, setLoading,weatherIcon } = useContext(AppContext)
+    const { coordinates, weatherapiKey, weatherIcon } = useContext(AppContext)
     const swipeRef = useRef(null)
     const [forecastData, setForecastData] = useState([])
     const [secforecastData, setSecForecastData] = useState([])
 
 
     const getForecast = async () => {
-        console.log('Fetching forecast with coordinates:', coordinates)
         try {
             if (!coordinates || coordinates.length < 2) {
                 console.error('Invalid coordinates:', coordinates)
@@ -24,8 +23,6 @@ const WeatherForecaste = () => {
             const data = await response.json()
             setForecastData(data.forecast.forecastday[0].hour)
             setSecForecastData(data.forecast.forecastday[1].hour)
-
-            console.log('Forecast data:', data)
         } catch (error) {
             console.error('Error fetching forecast:', error)
         }
