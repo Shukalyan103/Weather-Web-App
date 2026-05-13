@@ -6,7 +6,7 @@ import Maplocated from './Maplocated'
 import { AppContext } from "@/context/AppContext";
 
 const WeatherForecaste = () => {
-    const { citiesData, coordinates, weatherapiKey, setLoading,weatherIcon } = useContext(AppContext)
+    const { coordinates, weatherapiKey, weatherIcon } = useContext(AppContext)
     const swipeRef = useRef(null)
     const [forecastData, setForecastData] = useState([])
     const [secforecastData, setSecForecastData] = useState([])
