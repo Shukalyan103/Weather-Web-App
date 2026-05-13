@@ -1,0 +1,1 @@
+## 2024-05-24 - Missing Context on Icon-Only Carousel Controls\n**Learning:** The weather forecast carousel had icon-only next/previous buttons lacking screen reader context and visible keyboard focus states.\n**Action:** Ensure that all bare icons used for navigation include an `aria-label`, hover transitions, and `focus-visible` utility classes moving forward.
