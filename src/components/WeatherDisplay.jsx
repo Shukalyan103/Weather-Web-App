@@ -13,8 +13,7 @@ const spiltWord=(word)=>{
   return newWord[0]
 }
 
-const uvIndex=(word)=>{
-  const newWord=decimalFix(word)
+const uvIndex=(newWord)=>{
   if(newWord<=2){
     return 'LOW'
   }
@@ -30,6 +29,8 @@ const uvIndex=(word)=>{
   return 'EXTREME'
   
 }
+
+const uvValue = decimalFix(citiesData?.current?.uv);
 
 
   return  (
@@ -70,11 +71,11 @@ const uvIndex=(word)=>{
             <Sun/>
           </div>
           <div className='flex gap-2 items-end mt-5'>
-            <h1 className='text-4xl '>{decimalFix(citiesData?.current?.uv)||2}</h1>
-            <p className='text-xl text-gray-400 font-semibold'>{uvIndex(citiesData?.current?.uv)}</p>
+            <h1 className='text-4xl '>{uvValue||2}</h1>
+            <p className='text-xl text-gray-400 font-semibold'>{uvIndex(uvValue)}</p>
           </div>
           <div className='bg-[#142447] h-2 w-full rounded-xl overflow-hidden mt-3'>
-            <div style={{width: `${Math.min((decimalFix(citiesData?.current?.uv)/10)*100, 100)}%`}} className='h-full bg-[#A17EF2] '></div>
+            <div style={{width: `${Math.min((uvValue/10)*100, 100)}%`}} className='h-full bg-[#A17EF2] '></div>
 
           </div>
         </div>
