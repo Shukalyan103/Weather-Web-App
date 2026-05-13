@@ -29,9 +29,6 @@ const Maplocated = () => {
     </>
 
 
-    //  <Card className="h-80 p-0 overflow-hidden">
-    //     
-    //   </Card>
   )
 }
 
