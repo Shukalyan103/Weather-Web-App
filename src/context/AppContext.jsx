@@ -22,8 +22,6 @@ export const AppContextProvider = (props) => {
       const data = await response.json()
       setCitiesData(data)
       setLoading(false)
-
-      // console.log(data)
     } catch (error) {
       console.error('Error fetching weather:', error)
       setLoading(false)
@@ -41,8 +39,6 @@ export const AppContextProvider = (props) => {
       setCityLocated(data)
       setCoordinates([data[0].lat, data[0].lon])
       setLoading(false)
-
-      // console.log(data)
     } catch (error) {
       console.error('Error fetching weather:', error)
       setLoading(false)
