@@ -2,6 +2,23 @@ import { AppContext } from '@/context/AppContext'
 import { Cloud, Droplets, Sun, Wind } from 'lucide-react'
 import React,{useContext} from 'react'
 
+export const uvIndex = (word, decimalFix = Math.floor) => {
+  const newWord = decimalFix(word)
+  if (newWord <= 2) {
+    return 'LOW'
+  }
+  if (newWord > 2 && newWord <= 5) {
+    return 'MODERATE'
+  }
+  if (newWord > 5 && newWord <= 7) {
+    return 'HIGH'
+  }
+  if (newWord >= 8 && newWord <= 10) {
+    return 'VERY HIGH'
+  }
+  return 'EXTREME'
+}
+
 const WeatherDisplay = () => {
 
 const {citiesData,cityLocated,decimalFix,weatherIcon} =useContext(AppContext)
@@ -11,24 +28,6 @@ const spiltWord=(word)=>{
    if(!word) return 'Location'
   const newWord =word.split(",")
   return newWord[0]
-}
-
-const uvIndex=(word)=>{
-  const newWord=decimalFix(word)
-  if(newWord<=2){
-    return 'LOW'
-  }
-  if(newWord>2 && newWord<=5){
-    return 'MODERATE'
-  }
-  if(newWord>5 && newWord<=7){
-    return 'HIGH'
-  }
-  if(newWord>=8 && newWord<=10){
-    return 'VERY HIGH'
-  }
-  return 'EXTREME'
-  
 }
 
 
@@ -71,7 +70,7 @@ const uvIndex=(word)=>{
           </div>
           <div className='flex gap-2 items-end mt-5'>
             <h1 className='text-4xl '>{decimalFix(citiesData?.current?.uv)||2}</h1>
-            <p className='text-xl text-gray-400 font-semibold'>{uvIndex(citiesData?.current?.uv)}</p>
+            <p className='text-xl text-gray-400 font-semibold'>{uvIndex(citiesData?.current?.uv, decimalFix)}</p>
           </div>
           <div className='bg-[#142447] h-2 w-full rounded-xl overflow-hidden mt-3'>
             <div style={{width: `${Math.min((decimalFix(citiesData?.current?.uv)/10)*100, 100)}%`}} className='h-full bg-[#A17EF2] '></div>
