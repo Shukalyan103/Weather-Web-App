@@ -14,12 +14,7 @@ import {
 
 import { AppContext } from "@/context/AppContext";
 
-const WeeklyForcaset = () => {
-    const { citiesData, coordinates, weatherapiKey, setLoading, weatherIcon } = useContext(AppContext)
-    const [weekData, setWeekData] = useState([])
-
-
-    function getWeatherInfo(code) {
+export function getWeatherInfo(code) {
   switch (code) {
     // ☀️ Clear / Cloudy
     case 0:
@@ -87,11 +82,9 @@ const WeeklyForcaset = () => {
   }
 }
 
-
-
-
-
-
+const WeeklyForcaset = () => {
+    const { citiesData, coordinates, weatherapiKey, setLoading, weatherIcon } = useContext(AppContext)
+    const [weekData, setWeekData] = useState([])
 
     const getWeekData = async () => {
         try {
