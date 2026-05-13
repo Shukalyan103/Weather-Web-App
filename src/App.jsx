@@ -7,7 +7,7 @@ import Loading from './components/Loading'
 import Bargraph from './components/Bargraph'
 
 const App = () => {
-  const { setCity, input, setInput, citiesData, loading } = useContext(AppContext);
+  const { setCity, input, setInput, loading } = useContext(AppContext);
 
 
 
