@@ -6,7 +6,7 @@ import Maplocated from './Maplocated'
 import { AppContext } from "@/context/AppContext";
 
 const WeatherForecaste = () => {
-    const { citiesData, coordinates, weatherapiKey, setLoading,weatherIcon } = useContext(AppContext)
+    const { coordinates, weatherapiKey, weatherIcon } = useContext(AppContext)
     const swipeRef = useRef(null)
     const [forecastData, setForecastData] = useState([])
     const [secforecastData, setSecForecastData] = useState([])
@@ -40,9 +40,10 @@ const WeatherForecaste = () => {
 
     useEffect(() => {
         getForecast()
-
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [coordinates]);
+
+    const now = new Date();
 
     return (
         <div className='w-full min-h-205 lg:min-h-100 p-6 mt-5 flex gap-3 flex-col lg:flex-row'>
@@ -73,7 +74,7 @@ const WeatherForecaste = () => {
 
 
                             {forecastData &&
-                                forecastData.filter(items=>new Date(items.time)>new Date()).map((fore, i) => (
+                                forecastData.filter(items=>new Date(items.time)>now).map((fore, i) => (
                                     <SwiperSlide className='md:w-37.5! w-35!' key={i}>
                                         <div className='w-29  h-full bg-[#081329] rounded-full p-6 flex flex-col gap-5 items-center'>
                                             <h4 className='text-sm text-gray-600 opacity-90'>{spiltWord(fore.time)}</h4>
