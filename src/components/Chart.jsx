@@ -32,12 +32,10 @@ const graphData=async()=>{
       return
     }
     const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${citiesData.location.lat}&lon=${citiesData.location.lon}&appid=${openweatherapiKey}&units=metric`).then(res => res.json())
-    // console.log('Graph data response:', response)
     const format=  response?.list?.filter(item=>new Date(item.dt_txt)>new Date()).slice(0,6).map(item => ({
       time: new Date(item.dt_txt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       rain: item.rain ? item.rain["3h"] : 0
     }))
-    // console.log('Formatted graph data:', format)
     setGraph(format)
 
 
