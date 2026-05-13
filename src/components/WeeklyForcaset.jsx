@@ -15,7 +15,7 @@ import {
 import { AppContext } from "@/context/AppContext";
 
 const WeeklyForcaset = () => {
-    const { citiesData, coordinates, weatherapiKey, setLoading, weatherIcon } = useContext(AppContext)
+    const { coordinates } = useContext(AppContext)
     const [weekData, setWeekData] = useState([])
 
 
