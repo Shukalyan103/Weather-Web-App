@@ -4,6 +4,34 @@ import { createContext, useState, useEffect } from "react";
 
 export const AppContext = createContext()
 
+export const decimalFix = (num) => {
+  const newNum = Math.floor(num)
+  return newNum
+}
+
+export const weatherIcon = (Word, a) => {
+  const NewWord = Word?.toLowerCase()
+  if (NewWord?.includes('mist') ) {
+    return <CloudFog className={a} />
+  }
+  if (NewWord?.includes('sunny','clear') || NewWord?.includes('clear')  ) {
+    return <Sun className={a} />
+  }
+  if (NewWord?.includes('cloudy')) {
+    return <CloudSun className={a} />
+  }
+  if (NewWord?.includes('drizzle')) {
+    return <CloudDrizzle className={a} />
+  }
+  if (NewWord?.includes('rain')) {
+    return <CloudRain className={a} />
+  }
+  if (NewWord?.includes('thunder')) {
+    return <CloudLightning className={a} />
+  }
+  return null
+}
+
 export const AppContextProvider = (props) => {
   const weatherapiKey = import.meta.env.VITE_WEATHER_API_KEY;
   const openweatherapiKey = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
@@ -65,34 +93,6 @@ export const AppContextProvider = (props) => {
     }
 
   }, [coordinates]);
-
-
-  const decimalFix = (num) => {
-    const newNum = Math.floor(num)
-    return newNum
-  }
-
-  const weatherIcon = (Word, a) => {
-    const NewWord = Word?.toLowerCase()
-    if (NewWord?.includes('mist') ) {
-      return <CloudFog className={a} />
-    }
-    if (NewWord?.includes('sunny','clear') || NewWord?.includes('clear')  ) {
-      return <Sun className={a} />
-    }
-    if (NewWord?.includes('cloudy')) {
-      return <CloudSun className={a} />
-    }
-    if (NewWord?.includes('drizzle')) {
-      return <CloudDrizzle className={a} />
-    }
-    if (NewWord?.includes('rain')) {
-      return <CloudRain className={a} />
-    }
-    if (NewWord?.includes('thunder')) {
-      return <CloudLightning className={a} />
-    }
-  }
 
 
   const value = {
