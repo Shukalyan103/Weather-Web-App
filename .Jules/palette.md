@@ -1,0 +1,3 @@
+## 2024-05-14 - Icon-only Swiper Navigation Button Accessibility
+**Learning:** Found icon-only swiper navigation buttons (`ChevronLeft` and `ChevronRight`) in `src/components/WeatherForecaste.jsx` lacked `aria-label`s, focus states, and visual hover feedback. This is a common pattern to watch out for with custom carousel implementations.
+**Action:** Added semantic `aria-label` attributes and Tailwind utility classes (`focus-visible:ring-2 focus-visible:outline-none`, `hover:bg-gray-700`) to improve screen reader and keyboard accessibility. I will consistently check icon-only interactive elements for these missing accessibility attributes.
