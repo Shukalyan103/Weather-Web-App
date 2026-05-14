@@ -1,5 +1,5 @@
 import { AppContext } from '@/context/AppContext'
-import { Cloud, Droplets, Sun, Wind } from 'lucide-react'
+import { Droplets, Sun, Wind } from 'lucide-react'
 import React,{useContext} from 'react'
 
 const WeatherDisplay = () => {
