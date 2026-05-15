@@ -1,0 +1,3 @@
+## 2026-05-15 - [Accessible Swiper Controls]
+**Learning:** Icon-only navigation buttons in custom components like the forecast Swiper often lack intrinsic accessible names. It is important to remember to explicitly define `aria-label` for screen readers. Furthermore, adding visual states (hover background, focus-visible outlines) helps both mouse and keyboard users discover the interactive elements without impacting the existing UI layout.
+**Action:** When implementing or modifying custom navigation elements, especially icon-only buttons, always check for and add `aria-label`, hover states, and focus states.
