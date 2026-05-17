@@ -1,0 +1,3 @@
+## 2025-05-17 - Added accessible labels and keyboard focus states to Swiper navigation buttons
+**Learning:** Icon-only navigation controls (like the Next/Previous buttons for the forecast Swiper) often lack accessible names. Adding `aria-label` provides necessary context for screen readers. Furthermore, keyboard users need clear visual feedback; relying solely on default browser outlines may not provide sufficient contrast. Explicit focus rings using Tailwind (`focus-visible:ring-2 focus-visible:ring-white`) significantly improve usability.
+**Action:** Consistently review icon-only interactive elements for `aria-label` and explicit `focus-visible` styles in future enhancements.
