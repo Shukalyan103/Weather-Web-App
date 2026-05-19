@@ -54,8 +54,8 @@ const WeatherForecaste = () => {
                         <p className='text-gray-700 opacity-90 font-semibold'>24-hour celestial progression</p>
                     </div>
                     <div className='flex items-center gap-4'>
-                        <button onClick={() => swipeRef.current.slidePrev()} className=' p-1 border border-gray-500 rounded-full '><ChevronLeft color='white' /></button>
-                        <button onClick={() => swipeRef.current.slideNext()} className=' p-1 border border-gray-500 rounded-full'><ChevronRight color='white' /></button>
+                        <button aria-label="Previous forecast" onClick={() => swipeRef.current.slidePrev()} className=' p-1 border border-gray-500 rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:outline-none transition-colors cursor-pointer'><ChevronLeft color='white' /></button>
+                        <button aria-label="Next forecast" onClick={() => swipeRef.current.slideNext()} className=' p-1 border border-gray-500 rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:outline-none transition-colors cursor-pointer'><ChevronRight color='white' /></button>
                     </div>
                 </div>
                 <div className=' md:p-8 mt-5 '>
