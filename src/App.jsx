@@ -27,7 +27,7 @@ const App = () => {
           <div>
             <h2 className=' font-bold'>Apex Weather</h2>
           </div>
-          <input type="text" placeholder='Search cities' className='bg-slate-500 rounded-lg w-1/4 px-7 m-2.5 hidden md:block h-10'
+          <input type="text" placeholder='Search cities' aria-label="Search cities" className='bg-slate-500 rounded-lg w-1/4 px-7 m-2.5 hidden md:block h-10 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none'
             value={input}
             onChange={(e) => {
               e.preventDefault()
@@ -38,7 +38,7 @@ const App = () => {
           />
           {/* for phone */}
 
-          <input type="text" placeholder='Search cities' className='bg-slate-500 rounded-lg w-2/4 px-7 m-2.5  md:hidden h-10'
+          <input type="text" placeholder='Search cities' aria-label="Search cities" className='bg-slate-500 rounded-lg w-2/4 px-7 m-2.5  md:hidden h-10 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none'
             value={input}
             onChange={(e) => {
               e.preventDefault()
